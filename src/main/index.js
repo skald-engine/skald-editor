@@ -14,16 +14,14 @@ const winURL = process.env.NODE_ENV === 'development'
   : `file://${__dirname}/index.html`
 
 function createWindow () {
-  /**
-   * Initial window options
-   */
   mainWindow = new BrowserWindow({
-    useContentSize: true,
-    width: 1200,
-    height: 800,
-    minWidth: 1000,
-    minHeight: 600,
-    show: false
+    useContentSize : true,
+    width          : 1200,
+    height         : 800,
+    minWidth       : 1000,
+    minHeight      : 600,
+    show           : false,
+    frame          : false
   })
 
   mainWindow.loadURL(winURL)
@@ -31,7 +29,13 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
-  mainWindow.once('ready-to-show', () => mainWindow.show())
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
+    mainWindow.openDevTools()
+  })
+
+  global.$app = app
+  global.$window = mainWindow
 }
 
 app.on('ready', createWindow)

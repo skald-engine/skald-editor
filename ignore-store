@@ -1,0 +1,5 @@
+
+
+project:
+  name: <string>
+  base_dir: <string:path>

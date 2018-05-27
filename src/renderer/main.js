@@ -16,7 +16,7 @@ import '@/../../node_modules/@vuikit/theme/dist/vuikit.min.css'
 Vue.use(Vuikit)
 Vue.use(VuikitIcons)
 
-import '@/style.scss'
+import '@/style/index.scss'
 
 /* eslint-disable no-new */
 new Vue({
