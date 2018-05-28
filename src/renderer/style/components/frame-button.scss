@@ -1,0 +1,22 @@
+.sk-frame-button {
+  -webkit-app-region: no-drag;
+  -webkit-user-drag: none;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  color: $COLOR_UI_5;
+  background: fade-out($COLOR_UI_5, 1);
+  font-size: 10px;
+  transition: all $TRANSITION_TIME ease;
+
+  &:hover {
+    text-decoration: none;
+    color: $COLOR_UI_5;
+    background: fade-out($COLOR_UI_5, .9);
+    text-shadow: 0 0 1px $COLOR_UI_5;
+  }
+}

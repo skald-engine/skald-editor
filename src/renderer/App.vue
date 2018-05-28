@@ -1,15 +1,15 @@
 <template>
-  <div id="app">
+  <div id="root">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'skald-editor'
+    name: 'sk-editor'
   }
 </script>
 
-<style>
+<style lang="scss" module>
   /* CSS */
 </style>

@@ -53,7 +53,7 @@ let rendererConfig = {
         use: [
           'vue-style-loader',
           'css-loader',
-          'sass-loader'
+          'sass-loader',
         ]
       },
       {
