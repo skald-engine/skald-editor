@@ -23,7 +23,7 @@
 
   .temp {
     display: flex;
-    height: 50px;
+    height: 40px;
     width: 100%;
     background: $COLOR_UI_2;
   }
