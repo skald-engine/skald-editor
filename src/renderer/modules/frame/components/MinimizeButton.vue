@@ -1,13 +1,22 @@
 <template>
-  <a :class="[$style.root, 'sk-frame-button']" href="#">
+  <a href="#"
+     :class="[$style.root, 'sk-frame-button']"
+     v-on:click="action">
     <i class="fas fa-window-minimize"></i>
   </a>
 </template>
 
 
 <script>
+  const { remote } = require('electron')
+
   export default {
     name: 'sk-minimize-button',
+    methods: {
+      action: function(event) {
+        remote.BrowserWindow.getFocusedWindow().minimize()
+      }
+    }
   }
 </script>
 

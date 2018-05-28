@@ -32,7 +32,7 @@
     display: grid;
     align-items: stretch;
     grid-template-columns: auto;
-    grid-template-rows: 30px auto;
+    grid-template-rows: $SIZE_FRAME auto;
     grid-template-areas:
       "frame"
       "temp"

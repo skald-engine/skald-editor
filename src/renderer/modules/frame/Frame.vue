@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <div :class="[$style.cell, $style.left]">
-      
+      <sk-menu/>
     </div>
 
     <div :class="[$style.cell, $style.middle]">
@@ -9,6 +9,7 @@
     </div>
 
     <div :class="[$style.cell, $style.right]">
+      <sk-project-label/>  
       <sk-minimize-button/>  
       <sk-maximize-button/>  
       <sk-close-button/>  
@@ -18,6 +19,8 @@
 
 
 <script>
+  import Menu from '@/modules/frame/components/Menu';
+  import ProjectLabel from '@/modules/frame/components/ProjectLabel';
   import MinimizeButton from '@/modules/frame/components/MinimizeButton';
   import MaximizeButton from '@/modules/frame/components/MaximizeButton';
   import CloseButton from '@/modules/frame/components/CloseButton';
@@ -25,6 +28,8 @@
   export default {
     name: 'sk-frame',
     components: {
+      'sk-menu': Menu,
+      'sk-project-label': ProjectLabel,
       'sk-minimize-button': MinimizeButton,
       'sk-maximize-button': MaximizeButton,
       'sk-close-button': CloseButton,
