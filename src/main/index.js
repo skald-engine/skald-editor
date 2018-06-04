@@ -21,7 +21,7 @@ function createWindow () {
     minWidth       : 1000,
     minHeight      : 600,
     show           : false,
-    frame          : false
+    frame          : true
   })
 
   mainWindow.loadURL(winURL)
@@ -30,6 +30,7 @@ function createWindow () {
     mainWindow = null
   })
   mainWindow.once('ready-to-show', () => {
+    mainWindow.setMenu(null)
     mainWindow.show()
     mainWindow.openDevTools()
   })

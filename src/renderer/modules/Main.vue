@@ -1,45 +1,34 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.grid">
-      <div :class="[$style.panel, $style.frame]">
-        <sk-frame/>
-      </div>
 
-      <div :class="[$style.panel, $style.sidebar]">
-        <sk-sidebar/> 
-      </div>
+    <div :class="$style.menubar">
+      <sk-menubar/>
+    </div>
 
-      <div :class="[$style.panel, $style.infobar]">
-        <sk-infobar/>
+    <div :class="$style.container">
+      <div :class="$style.left">
+        <sk-infopanel/>
       </div>
-
-      <div :class="[$style.panel, $style.game]">
-        <sk-game/>
-      </div>
-
-      <div :class="[$style.panel, $style.statusbar]">
-        <sk-statusbar/>
+      <div :class="$style.right">
+        <sk-gamepanel/>
       </div>
     </div>
+
   </div>
 </template>
 
 
 <script>
-  import Frame from '@/modules/frame/Frame'
-  import Statusbar from '@/modules/statusbar/Statusbar'
-  import Sidebar from '@/modules/sidebar/Sidebar'
-  import Infobar from '@/modules/infobar/Infobar'
-  import Game from '@/modules/game/Game'
+  import Menubar from '@/modules/menubar/Menubar'
+  import Gamepanel from '@/modules/gamepanel/Gamepanel'
+  import Infopanel from '@/modules/infopanel/Infopanel'
 
   export default {
     name: 'sk-main',
     components: {
-      'sk-frame': Frame,
-      'sk-statusbar': Statusbar,
-      'sk-sidebar': Sidebar,
-      'sk-infobar': Infobar,
-      'sk-game': Game,
+      'sk-menubar': Menubar,
+      'sk-gamepanel': Gamepanel,
+      'sk-infopanel': Infopanel,
     }
   }
 </script>
@@ -48,42 +37,43 @@
 <style lang="scss" module>
   @import "@/style/index.scss";
 
-  .grid {
+  .root {
     width: 100vw;
     height: 100vh;
-    display: grid;
-    align-items: stretch;
-    grid-template-columns: $SIZE_SIDEBAR auto auto;
-    grid-template-rows: $SIZE_FRAME auto $SIZE_STATUSBAR;
-    grid-template-areas:
-      "frame frame frame"
-      "sidebar infobar game"
-      "statusbar statusbar statusbar"
+    text-align: center;
   }
 
-  .panel {
+  .container {
+    text-align: left;
     display: flex;
-    align-items: center;
-
-    & > div {
-      width: 100%;
-      height: 100%;
-    }
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    // height: calc(1'00% - #{($SIZE_MENUBAR * 4)});
+    max-width: $SIZE_CONTAINER;
+    // padding: ($SIZE_MENUBAR * 2) 5px;
   }
 
-  .frame {
-    grid-area: frame;
+  .left {
+    width: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-right: 1px solid $COLOR_UI_2;
+    padding: ($SIZE_MENUBAR * 2) 10px;
   }
-  .sidebar {
-    grid-area: sidebar;
+  .right {
+    width: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: ($SIZE_MENUBAR * 2) 10px;
   }
-  .infobar {
-    grid-area: infobar;
+
+  .menubar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: $SIZE_MENUBAR;
   }
-  .game {
-    grid-area: game;
-  }
-  .statusbar {
-    grid-area: statusbar;
-  }
+
 </style>

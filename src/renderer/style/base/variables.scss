@@ -1,1 +1,5 @@
 $TRANSITION_TIME: .3s;
+
+%TRANSITION_ALL {
+  transition: all $TRANSITION_TIME ease;
+}

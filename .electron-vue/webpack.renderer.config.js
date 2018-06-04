@@ -145,6 +145,9 @@ let rendererConfig = {
     },
     extensions: ['.js', '.vue', '.json', '.css', '.node']
   },
+  watchOptions: {
+    poll: true
+  },
   target: 'electron-renderer'
 }
 

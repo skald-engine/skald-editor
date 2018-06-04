@@ -109,6 +109,9 @@ let webConfig = {
     },
     extensions: ['.js', '.vue', '.json', '.css']
   },
+  watchOptions: {
+    poll: true
+  },
   target: 'web'
 }
 

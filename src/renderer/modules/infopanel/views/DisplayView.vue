@@ -1,20 +1,22 @@
 <template>
-  <a :class="[$style.root, 'sk-sidebar-button']">
-    <i class="fas fa-sitemap"></i>
-  </a>
+  <div :class="$style.root">
+    Display
+  </div>
 </template>
 
 
 <script>
   export default {
-    name: 'sk-displaylist-button',
+    name: 'sk-display-view'
   }
 </script>
 
 
 <style lang="scss" module>
   @import "@/style/index.scss";
-
+  
   .root {
+    width: 100%;
+    height: 100%;
   }
 </style>

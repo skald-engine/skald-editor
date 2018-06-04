@@ -54,6 +54,9 @@ let mainConfig = {
   resolve: {
     extensions: ['.js', '.json', '.node']
   },
+  watchOptions: {
+    poll: true
+  },
   target: 'electron-main'
 }
 
