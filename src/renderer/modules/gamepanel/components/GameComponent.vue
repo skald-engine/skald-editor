@@ -17,22 +17,24 @@
       },
     },
 
-    mounted: function() {
-      console.log('mounted')
 
+    mounted: function() {
       this.$options.reload = this.$options.reload.bind(this)
       this.$options.reload()
     },
     beforeDestroy: function() {
-      console.log('before destroy')
+      if (window.sk) {
+        window.sk.stop()
+      }
     },
     updated: function() {
-      console.log('updated')
+      this.$options.reload()
     },
+
 
     reload: function() {
       if (window.sk) {
-        window.sk.stop()
+        window.sk.destroy()
       }
 
       const parent = this.$refs['game-container']
@@ -47,8 +49,6 @@
       delete r.cache[r.resolve(gamePath)]
       delete window.$main
 
-      console.log([parent])
-      
       let sk = r(skPath)
       let game = r(gamePath)
       window.$main(parent)

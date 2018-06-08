@@ -101,7 +101,8 @@
         margin-top: $MENU_ITEM_SPACING;
         align-items: center;
         justify-content: center;
-        text-transform: uppercase; 
+        text-transform: uppercase;
+        border-bottom: 1px solid transparent;
 
         &:hover {
           color: $COLOR_GRAY_2;
