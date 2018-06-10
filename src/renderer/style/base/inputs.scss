@@ -1,0 +1,23 @@
+
+.sk-input {
+  @extend %FONT_INPUT;
+
+  height: 30px;
+  width: 100%;
+  background: $COLOR_UI_1;
+  color: $COLOR_GRAY_1;
+  border: 1px solid $COLOR_UI_3;
+}
+
+input.sk-input {
+  padding: 0 5px;
+
+  &::placeholder {
+    color: fade-out($COLOR_GRAY_1, 0.5);
+  }
+}
+
+select.sk-input {
+  padding: 0 5px;
+  text-transform: uppercase;
+}

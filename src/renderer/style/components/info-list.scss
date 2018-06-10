@@ -1,0 +1,21 @@
+.sk-info-list {
+  @extend %FONT_TEXT;
+  padding: 0;
+  margin: 0 0 25px 0;
+
+  li {
+    margin: 0;
+    list-style: none;
+
+    padding: 5px 0;
+    // border-bottom: 1px solid $COLOR_UI_2;
+
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+}

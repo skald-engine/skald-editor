@@ -9,3 +9,37 @@ html, body {
 
   font-family: 'Open Sans', sans-serif;
 }
+
+
+html {
+  box-sizing: border-box;
+  outline: none;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  outline: inherit;
+}
+
+
+* {
+  ::-webkit-scrollbar-button{
+    display: none;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: $COLOR_BLUE;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: lighten($COLOR_BLUE, 10%);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-track{
+    background-color: $COLOR_UI_1;
+  }
+  ::-webkit-scrollbar-track:hover{
+    background-color: $COLOR_UI_1;
+  }
+  ::-webkit-scrollbar{
+    width: 5px;
+  }
+}

@@ -1,6 +1,6 @@
 const state = {
   menubar: {
-    selected: 'projects',
+    selected: 'objects',
   },
 }
 

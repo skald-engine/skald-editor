@@ -1,0 +1,8 @@
+.sk-info-section {
+  @extend %FONT_SECTION;
+  text-transform: uppercase;
+  color: $COLOR_GRAY_1;
+  letter-spacing: 1px;
+  margin: 0 0 15px 0;
+  opacity: 0.7;
+}

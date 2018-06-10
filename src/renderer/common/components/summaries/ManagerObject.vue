@@ -1,6 +1,7 @@
 <template>
   <div :class="$style.root">
-    {{name}} ({{enabled}})
+    <span :class="$style.name">{{name}}</span>
+    <span :class="$style.enabled">{{enabled? 'enabled' : 'disabled'}}</span>
   </div>
 </template>
 
@@ -23,5 +24,19 @@
   .root {
     width: 100%;
     height: 100%;
+    display: flex;
+  }
+
+  .name {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .enabled {
+    font-size: 0.8em;
+    opacity: 0.5;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: right;
   }
 </style>
